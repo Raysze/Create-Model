@@ -6,7 +6,7 @@
 
 ###安裝
 需要先下載JDK和安裝Maven依賴，分別使用的版本為 : JDK16 , Maven 3.8.2
-##設定連線資料庫和檔案位置
+###設定連線資料庫和檔案位置
  	///連線資料庫的資料  44行
  	//jdbc:mysql://localhost:資料庫連接的PORT/資料庫名稱?serverTimezone=UTC&useSSL=false
         String url = "jdbc:mysql://localhost:3306/sys?serverTimezone=UTC&useSSL=false";
