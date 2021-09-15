@@ -1,13 +1,13 @@
 # 使用FreeMarker在Maven專案上透過資料庫中的表屬性自動生成Model(Entity)和Repository。
 
-###索引 
+### 索引 
  - 安裝
  - 設定連線資料庫和檔案位置
  - 尚未完成的部分
 
-###安裝
+#安裝
 需要先下載JDK和安裝Maven依賴，分別使用的版本為 : JDK16 , Maven 3.8.2
-###設定連線資料庫和檔案位置
+### 設定連線資料庫和檔案位置
  	///連線資料庫的資料  44行
  	//jdbc:mysql://localhost:資料庫連接的PORT/資料庫名稱?serverTimezone=UTC&useSSL=false
         String url = "jdbc:mysql://localhost:3306/sys?serverTimezone=UTC&useSSL=false";
@@ -35,9 +35,9 @@
         if(!dir.exists()){
             dir.mkdirs();
         }
-###使用方式
+### 使用方式
 **執行專案後，可以輸入資料庫中的目標表格名字，程式就會連線到資料庫抓取屬性名並建立出Model。**
-###尚未完成的部分
+### 尚未完成的部分
 現在可以透過抓取資料庫中的屬性來建立一個基本的Model, 但無法製作出一個完整擁有關聯性的Model, 目前可以做到加上**Id,Column,GeneratedValue,Notnull,creationTimestamp**等標籤，也能透過**Value**來設定屬性的Default值,這個值是來
 自於資料庫建立時是否有下Default value,接下來就是關於關聯性的問題,目前已經可以取出foreign key和ParentKey,但卻無
 法判斷兩個表究竟是one to one,one to many等關係,有寫了一些關於建立關聯性, 我原本想說用一張表直接記住全部表的相
